@@ -1,39 +1,44 @@
 (function () {
-  const SCREENS = {
-    'welcome': 5
-  };
+  const SCREENS = [
+    {'name': `welcome`, 'template': 5},
+    {'name': `level`, 'template': 4},
+    {'name': `result`, 'template': 3},
+    {'name': `result-false`, 'template': 2}
+  ];
 
   const templates = Array.from(document.querySelector(`#templates`).content.children);
   let appCurrentContent = document.querySelector(`section.main`);
-  let currentScreen = SCREENS.welcome;
+  let currentScreen = 0;
 
   const changeContentWindow = (item) => {
     appCurrentContent.parentNode.replaceChild(item, appCurrentContent);
     appCurrentContent = item;
   };
 
-  const showNextWindow = () => {
-    if (currentScreen + 1 < templates.length) {
-      changeContentWindow(templates[++currentScreen]);
-    }
+  const appContentSwitcher = (screenIndex) => {
+    changeContentWindow(templates[SCREENS[screenIndex].template]);
   };
 
-  const showPrevWindow = () => {
-    if (currentScreen - 1 >= 0) {
-      changeContentWindow(templates[--currentScreen]);
+  const changeAppWindow = (next = true) => {
+    if (next) {
+      if (currentScreen + 1 < SCREENS.length) {
+        appContentSwitcher(++currentScreen);
+      }
+    } else if (currentScreen - 1 >= 0) {
+      appContentSwitcher(--currentScreen);
     }
   };
 
   const appContentSwitcherHandler = (evt) => {
     if (evt.altKey) {
       switch (evt.keyCode) {
-        case 39: showNextWindow(); break;
-        case 37: showPrevWindow(); break;
+        case 39: changeAppWindow(); break;
+        case 37: changeAppWindow(false); break;
       }
     }
   };
 
   document.addEventListener(`keydown`, appContentSwitcherHandler);
 
-  changeContentWindow(templates[currentScreen]);
+  appContentSwitcher(currentScreen);
 })();
