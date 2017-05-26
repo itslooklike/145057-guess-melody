@@ -1,8 +1,10 @@
 (function () {
+  // порядок перекдючения страниц идет по порядку элементов в массиве
   const SCREENS = [
     {'name': `welcome`, 'template': 5},
-    {'name': `level`, 'template': 4},
-    {'name': `result`, 'template': 3},
+    {'name': `level-artist`, 'template': 4},
+    {'name': `level-genre`, 'template': 0},
+    {'name': `result-success`, 'template': 3},
     {'name': `result-false`, 'template': 2}
   ];
 
@@ -10,9 +12,9 @@
   let appCurrentContent = document.querySelector(`section.main`);
   let currentScreen = 0;
 
-  const changeContentWindow = (item) => {
-    appCurrentContent.parentNode.replaceChild(item, appCurrentContent);
-    appCurrentContent = item;
+  const changeContentWindow = (newContent) => {
+    appCurrentContent.parentNode.replaceChild(newContent, appCurrentContent);
+    appCurrentContent = newContent;
   };
 
   const appContentSwitcher = (screenIndex) => {
