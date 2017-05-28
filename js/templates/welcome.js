@@ -1,6 +1,8 @@
-import CreateDOMElement from '../modules/CreateDOMElement';
+import createDOMElement from '../modules/createDOMElement';
+import contentReplacer from '../modules/contentReplacer';
+import levelArtist from './levelArtist';
 
-const Welcome = CreateDOMElement`
+const welcome = createDOMElement`
   <section class="main main--welcome">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
     <button class="main-play">Начать игру</button>
@@ -13,4 +15,12 @@ const Welcome = CreateDOMElement`
   </section>
 `;
 
-export default Welcome;
+const contentReplacerHandler = () => {
+  button.removeEventListener(`click`, contentReplacerHandler);
+  contentReplacer(levelArtist);
+};
+
+const button = welcome.querySelector(`.main-play`);
+button.addEventListener(`click`, contentReplacerHandler);
+
+export default welcome;

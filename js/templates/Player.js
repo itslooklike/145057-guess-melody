@@ -1,6 +1,6 @@
-import CreateDOMElement from '../modules/CreateDOMElement';
+import createDOMElement from '../modules/createDOMElement';
 
-const Player = CreateDOMElement`
+const Player = createDOMElement`
   <div class="player">
     <audio></audio>
     <button class="player-control">Play</button>

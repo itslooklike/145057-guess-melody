@@ -1,6 +1,6 @@
-import CreateDOMElement from '../modules/CreateDOMElement';
+import createDOMElement from '../modules/createDOMElement';
 
-const ResultSuccess = CreateDOMElement`
+const ResultSuccess = createDOMElement`
   <section class="main main--result">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
 

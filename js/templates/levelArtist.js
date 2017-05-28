@@ -1,6 +1,6 @@
-import CreateDOMElement from '../modules/CreateDOMElement';
+import createDOMElement from '../modules/createDOMElement';
 
-const LevelArtist = CreateDOMElement`
+const levelArtist = createDOMElement`
   <section class="main main--level main--level-artist">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
       <circle
@@ -49,4 +49,4 @@ const LevelArtist = CreateDOMElement`
   </section>
 `;
 
-export default LevelArtist;
+export default levelArtist;
