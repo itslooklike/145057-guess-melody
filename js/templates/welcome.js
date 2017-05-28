@@ -16,7 +16,7 @@ const welcome = createDOMElement`
 `;
 
 const contentReplacerHandler = () => {
-  button.removeEventListener(`click`, contentReplacerHandler);
+  // button.removeEventListener(`click`, contentReplacerHandler);
   contentReplacer(levelArtist);
 };
 

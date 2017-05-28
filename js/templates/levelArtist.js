@@ -1,4 +1,6 @@
 import createDOMElement from '../modules/createDOMElement';
+import contentReplacer from '../modules/contentReplacer';
+import levelGenre from './levelGenre';
 
 const levelArtist = createDOMElement`
   <section class="main main--level main--level-artist">
@@ -48,5 +50,15 @@ const levelArtist = createDOMElement`
     </div>
   </section>
 `;
+
+const contentReplacerHandler = (evt) => {
+  if (evt.target.tagName === `INPUT`) {
+    // button.removeEventListener(`click`, contentReplacerHandler);
+    contentReplacer(levelGenre);
+  }
+};
+
+const button = levelArtist.querySelector(`.main-list`);
+button.addEventListener(`click`, contentReplacerHandler);
 
 export default levelArtist;

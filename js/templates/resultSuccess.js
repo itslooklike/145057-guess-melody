@@ -1,6 +1,8 @@
 import createDOMElement from '../modules/createDOMElement';
+import contentReplacer from '../modules/contentReplacer';
+import welcome from './welcome';
 
-const ResultSuccess = createDOMElement`
+const resultSuccess = createDOMElement`
   <section class="main main--result">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
 
@@ -11,4 +13,12 @@ const ResultSuccess = createDOMElement`
   </section>
 `;
 
-export default ResultSuccess;
+const contentReplacerHandler = () => {
+  // button.removeEventListener(`click`, contentReplacerHandler);
+  contentReplacer(welcome);
+};
+
+const button = resultSuccess.querySelector(`.main-replay`);
+button.addEventListener(`click`, contentReplacerHandler);
+
+export default resultSuccess;
