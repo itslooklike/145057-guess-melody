@@ -2,7 +2,7 @@ import createDOMElement from '../modules/createDOMElement';
 import contentReplacer from '../modules/contentReplacer';
 import levelGenre from './levelGenre';
 
-const levelArtist = createDOMElement`
+const levelArtist = createDOMElement(`
   <section class="main main--level main--level-artist">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
       <circle
@@ -49,11 +49,10 @@ const levelArtist = createDOMElement`
       </form>
     </div>
   </section>
-`;
+`);
 
 const contentReplacerHandler = (evt) => {
   if (evt.target.tagName === `INPUT`) {
-    // button.removeEventListener(`click`, contentReplacerHandler);
     contentReplacer(levelGenre);
   }
 };

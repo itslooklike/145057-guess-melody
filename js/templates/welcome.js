@@ -2,7 +2,7 @@ import createDOMElement from '../modules/createDOMElement';
 import contentReplacer from '../modules/contentReplacer';
 import levelArtist from './levelArtist';
 
-const welcome = createDOMElement`
+const welcome = createDOMElement(`
   <section class="main main--welcome">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
     <button class="main-play">Начать игру</button>
@@ -13,10 +13,9 @@ const welcome = createDOMElement`
       Удачи!
     </p>
   </section>
-`;
+`);
 
 const contentReplacerHandler = () => {
-  // button.removeEventListener(`click`, contentReplacerHandler);
   contentReplacer(levelArtist);
 };
 

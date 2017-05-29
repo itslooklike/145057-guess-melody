@@ -4,7 +4,7 @@ import {getRandomTrueFalse} from '../modules/helpers';
 import resultSuccess from './resultSuccess';
 import resultFalse from './resultFalse';
 
-const levelGenre = createDOMElement`
+const levelGenre = createDOMElement(`
   <section class="main main--level main--level-genre">
     <h2 class="title">Выберите инди-рок треки</h2>
     <form class="genre">
@@ -35,11 +35,10 @@ const levelGenre = createDOMElement`
       <button class="genre-answer-send" type="submit">Ответить</button>
     </form>
   </section>
-`;
+`);
 
 const contentReplacerHandler = (evt) => {
   evt.preventDefault();
-  // button.removeEventListener(`click`, contentReplacerHandler);
 
   if (getRandomTrueFalse()) {
     contentReplacer(resultSuccess);

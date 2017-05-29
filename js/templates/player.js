@@ -1,6 +1,6 @@
 import createDOMElement from '../modules/createDOMElement';
 
-const player = createDOMElement`
+const player = createDOMElement(`
   <div class="player">
     <audio></audio>
     <button class="player-control">Play</button>
@@ -8,6 +8,6 @@ const player = createDOMElement`
       <span class="player-status"></span>
     </div>
   </div>
-`;
+`);
 
 export default player;

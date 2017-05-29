@@ -2,7 +2,7 @@ import createDOMElement from '../modules/createDOMElement';
 import contentReplacer from '../modules/contentReplacer';
 import welcome from './welcome';
 
-const resultSuccess = createDOMElement`
+const resultSuccess = createDOMElement(`
   <section class="main main--result">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
 
@@ -11,10 +11,9 @@ const resultSuccess = createDOMElement`
     <span class="main-comparison">Это&nbsp;лучше чем у&nbsp;80%&nbsp;игроков</span>
     <span role="button" tabindex="0" class="main-replay">Сыграть ещё раз</span>
   </section>
-`;
+`);
 
 const contentReplacerHandler = () => {
-  // button.removeEventListener(`click`, contentReplacerHandler);
   contentReplacer(welcome);
 };
 
