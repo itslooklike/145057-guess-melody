@@ -1,15 +1,15 @@
 import createDOMElement from '../modules/createDOMElement';
 import contentReplacer from '../modules/contentReplacer';
+import title from '../components/tittle';
 import welcome from './welcome';
+import data from '../data/data';
 
 const resultFalse = createDOMElement(`
   <section class="main main--result">
-    <section class="logo" title="Угадай мелодию">
-      <h1>Угадай мелодию</h1>
-    </section>
-    <h2 class="title">Вы проиграли</h2>
-    <div class="main-stat">Ничего, вам повезет в следующий раз</div>
-    <span role="button" tabindex="0" class="main-replay">Сыграть ещё раз</span>
+    ${title()}
+    <h2 class="title">${data.pages.resultFalse.title}</h2>
+    <div class="main-stat">${data.pages.resultFalse.stat}</div>
+    <span role="button" tabindex="0" class="main-replay">${data.pages.resultFalse.btnText}</span>
   </section>
 `);
 
