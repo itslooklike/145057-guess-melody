@@ -1,17 +1,15 @@
 import createDOMElement from '../modules/createDOMElement';
 import contentReplacer from '../modules/contentReplacer';
 import levelArtist from './levelArtist';
+import title from '../components/tittle';
+import data from '../data/data';
 
 const welcome = createDOMElement(`
   <section class="main main--welcome">
-    <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
+    ${title()}
     <button class="main-play">Начать игру</button>
-    <h2 class="title main-title">Правила игры</h2>
-    <p class="text main-text">
-      Правила просты&nbsp;— за&nbsp;2 минуты дать
-      максимальное количество правильных ответов.<br>
-      Удачи!
-    </p>
+    <h2 class="title main-title">${data.pages.welcome.title}</h2>
+    <p class="text main-text">${data.pages.welcome.subtitle}</p>
   </section>
 `);
 
