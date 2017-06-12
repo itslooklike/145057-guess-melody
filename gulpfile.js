@@ -47,9 +47,6 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('build/js'));
 });
 
-gulp.task('test', function () {
-});
-
 gulp.task('imagemin', ['copy'], function () {
   return gulp.src('build/img/**/*.{jpg,png,gif}')
     .pipe(imagemin([
@@ -83,6 +80,15 @@ gulp.task('js-watch', ['scripts'], function (done) {
   done();
 });
 
+gulp.task('test', function () {
+  return gulp
+    .src(['js/**/*.test.js'], { read: false })
+    .pipe(mocha({
+      compilers: ['js:babel-register'],
+      reporter: 'nyan'
+    }));
+});
+
 gulp.task('serve', ['assemble'], function () {
   server.init({
     server: './build',
@@ -90,15 +96,6 @@ gulp.task('serve', ['assemble'], function () {
     open: true,
     port: 3502,
     ui: false
-  });
-
-  gulp.task('test', function () {
-    return gulp
-      .src(['js/**/*.test.js'], { read: false })
-      .pipe(mocha({
-        compilers: ['js:babel-register'],
-        reporter: 'nyan'
-      }));
   });
 
   gulp.watch('sass/**/*.{scss,sass}', ['style']);
