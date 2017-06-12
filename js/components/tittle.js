@@ -1,4 +1,4 @@
-import data from '../data/data';
+import data from '../data/game-data';
 
 const title = () => (`
   <section class="logo" title="Угадай мелодию">
