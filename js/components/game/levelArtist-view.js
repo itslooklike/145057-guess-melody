@@ -1,9 +1,9 @@
-import View from '../view';
+import AbstractView from '../../abstract-view';
 
-import {getRandomValuesFromArray} from '../modules/helpers';
-import data from '../data/game-data';
+import {getRandomValuesFromArray} from '../../utils/helpers';
+import data from '../../data/game-data';
 
-export default class LevelArtistView extends View {
+export default class LevelArtistView extends AbstractView {
 
   levelArtistAnswer(item) {
     const {value, imgSrc, name} = item;
@@ -25,7 +25,7 @@ export default class LevelArtistView extends View {
         <circle
           cx="390" cy="390" r="370"
           class="timer-line"
-          style="filter: url(.#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"></circle>
+          style="filter: url(../../templates#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"></circle>
         <div class="timer-value" xmlns="http://www.w3.org/1999/xhtml">
           <span class="timer-value-mins">${info.startMinutes}</span><!--
           --><span class="timer-value-dots">:</span><!--

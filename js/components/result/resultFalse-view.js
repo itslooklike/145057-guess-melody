@@ -1,9 +1,9 @@
-import View from '../view';
+import AbstractView from '../../abstract-view';
 
-import data from '../data/game-data';
-import title from '../components/tittle';
+import data from '../../data/game-data';
+import title from '../common/tittle';
 
-export default class ResultFalseView extends View {
+export default class ResultFalseView extends AbstractView {
   get template() {
     return (`
       <section class="main main--result">

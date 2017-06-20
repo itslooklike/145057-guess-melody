@@ -1,6 +1,7 @@
-const initialState = {
+export const initialState = {
   lives: 3,
-  totalScore: 0
+  totalScore: 0,
+  time: 120
 };
 
 export const setGameLives = (state, lives) => {
@@ -10,6 +11,28 @@ export const setGameLives = (state, lives) => {
 
   state = Object.assign({}, state);
   state.lives = lives;
+
+  return state;
+};
+
+export const setGameTime = (state, time) => {
+  if (time < 0) {
+    throw new RangeError(`Время не может быть меньше 0`);
+  }
+
+  state = Object.assign({}, state);
+  state.time = time;
+
+  return state;
+};
+
+export const setGameScore = (state, score) => {
+  if (score < 0) {
+    throw new RangeError(`Очков не может быть меньше 0`);
+  }
+
+  state = Object.assign({}, state);
+  state.score = score;
 
   return state;
 };

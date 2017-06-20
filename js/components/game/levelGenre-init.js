@@ -1,7 +1,7 @@
-import contentReplacer from '../modules/contentReplacer';
+import changeView from '../../utils/change-view';
 import LevelGenreView from './levelGenre-view';
 
-import resultFalse from '../templates/resultFalse-init';
+import resultFalse from '../result/resultFalse-init';
 
 const levelGenre = new LevelGenreView();
 
@@ -21,7 +21,7 @@ levelGenre.onCheckChange = (form, button) => {
 levelGenre.onStart = (evt) => {
   evt.preventDefault();
   console.log(`levelGenre`);
-  contentReplacer(resultFalse().element);
+  changeView(resultFalse);
 };
 
 export default () => levelGenre;

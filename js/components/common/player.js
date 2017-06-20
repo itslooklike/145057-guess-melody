@@ -1,4 +1,4 @@
-import createDOMElement from '../modules/createDOMElement';
+import createDOMElement from '../../utils/createDOMElement';
 
 const player = createDOMElement(`
   <div class="player">

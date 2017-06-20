@@ -1,9 +1,9 @@
-import View from '../view';
+import AbstractView from '../../abstract-view';
 
-import title from '../components/tittle';
-import data from '../data/game-data';
+import title from '../common/tittle';
+import data from '../../data/game-data';
 
-export default class WelcomeView extends View {
+export default class WelcomeView extends AbstractView {
   get template() {
     return (`
       <section class="main main--welcome">

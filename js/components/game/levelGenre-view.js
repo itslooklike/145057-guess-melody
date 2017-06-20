@@ -1,9 +1,9 @@
-import View from '../view';
+import AbstractView from '../../abstract-view';
 
-import {getRandomValuesFromArray} from '../modules/helpers';
-import data from '../data/game-data';
+import {getRandomValuesFromArray} from '../../utils/helpers';
+import data from '../../data/game-data';
 
-export default class LevelGenreView extends View {
+export default class LevelGenreView extends AbstractView {
   levelGenreAnswer(item) {
     const {value} = item;
 

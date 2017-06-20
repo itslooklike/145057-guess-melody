@@ -1,6 +1,6 @@
-import createDOMElement from './modules/createDOMElement';
+import createDOMElement from './utils/createDOMElement';
 
-export default class View {
+export default class AbstractView {
   get template() {
     throw new Error(`need define view`);
   }
